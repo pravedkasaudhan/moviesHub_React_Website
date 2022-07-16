@@ -26,7 +26,8 @@ export default function SimpleBottomNavigation() {
          width: "100%",
          position:"fixed",
          bottom:0,
-         backgroundColor:"black",
+         color:"red",
+         backgroundColor:"#ffffff",
          zIndex:100 
          }}>
       <BottomNavigation

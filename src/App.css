@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    scroll-behavior: smooth;
 }
 .app{
 min-height: 100vh;
@@ -9,8 +10,20 @@ padding-top:70px;
 padding-bottom: 50px;
 }
 
+
+.pageTitle{
+    display: flex;
+    justify-content: center;
+    font-family: "Playfair";
+    font-size: 2vw;
+    padding-top: 5px;
+    color: burlywood;
+}
 @media(max-width:800px){
     .app{
-        padding-top:85px;
+        padding-top:55px;
+    }
+    .pageTitle{
+        font-size: 6vw;
     }
 }
