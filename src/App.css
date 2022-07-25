@@ -16,14 +16,14 @@ padding-bottom: 50px;
     justify-content: center;
     font-family: "Playfair";
     font-size: 2vw;
-    padding-top: 5px;
+    padding-top: 15px;
     color: burlywood;
 }
 @media(max-width:800px){
     .app{
-        padding-top:55px;
+        padding-top:85px;
     }
     .pageTitle{
-        font-size: 6vw;
+        font-size: 3vw;
     }
 }
