@@ -13,12 +13,13 @@ function Trending() {
         );
 
         setContent(data.results);
-        console.log(data);
+        // console.log(data);
     }
    
 
     useEffect(() => {
         getTrendingData();
+        // eslint-disable-next-line
     }, [page])
     return (
         <div>

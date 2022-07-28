@@ -10,10 +10,12 @@ const darkTheme = createTheme({
     },
 });
 
-function CustomPagination({ setPage }) {
-    const [numberOfPages, setNumberOfPages] = useState(10)
+function CustomPagination(props) {
+    const {setPage}=props;
+    const [numberOfPages, setNumberOfPages] = useState(props.numberOfPages?props.numberOfPages:10)
     const handlePageChange = (page) => {
         setPage(page);
+        setNumberOfPages(props.numberOfPages?props.numberOfPages:10);
         window.scroll(0, 0);
     }
     return (
@@ -22,7 +24,12 @@ function CustomPagination({ setPage }) {
 
                 <Pagination
                     count={numberOfPages}
-                    onChange={(e) => handlePageChange(e.target.textContent)} />
+                    onChange={(e) => handlePageChange(e.target.textContent)} 
+                    hideNextButton
+                    hidePrevButton
+                    color="primary"
+                    />
+                    
             </ThemeProvider>
         </div>
     )

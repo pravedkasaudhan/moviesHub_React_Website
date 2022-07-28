@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import Box from '@mui/material/Box';
-import { makeStyles } from '@mui/styles';
+// import Box from '@mui/material/Box';
+import {makeStyles} from '@mui/styles';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
@@ -13,10 +13,12 @@ import { useNavigate } from 'react-router-dom';
 
 const useStyles=makeStyles({
   root:{
-    // width:"100%",
+    width:"100%",
     position:"fixed",
     bottom:0,
-    backgroundColor:"black"
+    backgroundColor:"black",
+    color: "white",
+    zIndex:100
   }
 });
 export default function SimpleBottomNavigation() {
@@ -46,7 +48,7 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
         showLabels
-        // className={classes.root}
+        className={classes.root}
       >
 
         <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
