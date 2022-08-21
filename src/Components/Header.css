@@ -12,6 +12,7 @@
     z-index:100;
     color: rgb(255, 255, 255);
     box-shadow: 0px 0px 12px 5px black;
+    background-image: linear-gradient(to right, rgb(52 8 8) , #463d93);
 }
 
 @media (max-width:800px){
