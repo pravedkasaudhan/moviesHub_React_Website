@@ -27,7 +27,7 @@ export default function SimpleBottomNavigation() {
   const navigate = useNavigate();
 
   useEffect(() => {
-
+    window.scroll(0,0);
     if (value === 0) navigate("/");
     else if (value === 1) navigate("/movies");
     else if (value === 2) navigate("/tvShow");
@@ -46,6 +46,7 @@ export default function SimpleBottomNavigation() {
       value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
+          // window.scroll(0,0);
         }}
         showLabels
         className={classes.root}
