@@ -17,7 +17,6 @@ function App() {
   return (
     <>
 <BrowserRouter>
-{/* <img src="../public/bg.jpg" alt="" /> */}
     <div className="App">
      <Header/>
      <div className="app">
