@@ -13,11 +13,11 @@ import { useNavigate } from 'react-router-dom';
 
 const useStyles=makeStyles({
   root:{
+    backgroundColor:"#ffffff",
+    color: "#rrffee",
     width:"100%",
     position:"fixed",
     bottom:0,
-    backgroundColor:"black",
-    color: "white",
     zIndex:100
   }
 });

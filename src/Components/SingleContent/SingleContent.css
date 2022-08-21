@@ -1,25 +1,25 @@
 .media{
     display: flex;
     flex-direction: column;
-    width:180px;
-    padding: 4px;
+    width:200px;
+    /* padding: 2px 5px; */
     margin:3px 1px;
     background-color: rgb(70, 67, 67);
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
     font-family:"Playfair" ;
     /* justify-content: center;
     align-items: center; */
 }
 
 .media:hover{
-    background-color: rgb(255, 208, 208);
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
 
 @media (max-width:500px){
     .media{
-        width:45%;
+        /* width:45%; */
     }
 }
 

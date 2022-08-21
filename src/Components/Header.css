@@ -4,7 +4,8 @@
     position: fixed;
     display: flex;
     justify-content: center;
-    background-color: rgb(95, 94, 93);
+    /* background-color: rgb(95, 94, 93); */
+    background-color: rgb(50 75 82);
     padding: 10px;
     font-family: "Playfair";
     font-size: 3vw;

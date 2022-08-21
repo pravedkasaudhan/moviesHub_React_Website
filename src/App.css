@@ -4,11 +4,13 @@
 }
 .app{
 min-height: 100vh;
-background-color: rgb(109, 4, 4);
+background-color:rgb(109 4 4 / 82%);
 color:white;
 padding-top:70px;
 padding-bottom: 50px;
+background: url('../public/bg.jpg') no-repeat center center/cover;
 }
+
 
 
 .pageTitle{
@@ -22,7 +24,7 @@ padding-bottom: 50px;
 
 @media(max-width:800px){
     .app{
-        padding-top:85px;
+        padding-top:75px;
     }
     .pageTitle{
         font-size: 3vw;

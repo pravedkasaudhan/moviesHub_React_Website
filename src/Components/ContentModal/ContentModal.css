@@ -1,0 +1,102 @@
+
+
+
+.ContentModal_landscape{
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.ContentModal_portrait{
+    display: none;
+    object-fit: contain;
+    border-radius: 15px;
+    
+}
+
+.tagline{
+    /* padding-bottom: 10px; */
+    align-self: center;
+}
+
+.ContentModal{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 100%; */
+    /* width:100%; */
+    /* overflow-y:scroll; */
+    /* scrollbar-width: none; */
+}
+
+/* Box::-webkit-scrollbar{
+    display: none;
+} */
+
+.ContentModal_about{
+    padding:10px;
+    width:90%;
+    height:80%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    font-weight: 300;
+}
+
+.ContentModal_title{
+    height:15%;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ContentModal_description{
+    display: flex;
+    height: 100px;
+    overflow-y: scroll;
+    padding:10px 25px;
+    border-radius: 20px;
+    scrollbar-width: thin;
+    /* align-items: center; */
+    box-shadow: inset 0 0 10px black;
+    margin-bottom: 30px;
+}
+
+.ContentModal_description::-webkit-scrollbar{
+    display: none;
+}
+
+@media(min-width:800px){
+    .ContentModal_landscape{
+        display: none;
+    }
+
+    .ContentModal_portrait{
+        display: flex;
+        width:33%;
+    }
+
+    .ContentModal{
+        flex-direction: row;
+        justify-content: space-around;
+        padding:10px 0;
+    }
+
+    .ContentModal_about{
+        width:58%;
+        padding:0;
+        height:100%
+    }
+
+    .ContentModal_title{
+        font-size: 3vw;
+    }
+
+    .ContentModal_description{
+        font-size: 24px;
+        margin-bottom: 20px;
+        height: 38vh;
+    }
+}
+
+

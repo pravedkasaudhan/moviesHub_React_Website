@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Pagination } from '@mui/material'
 import './CustomPagination.css';
@@ -18,6 +18,11 @@ function CustomPagination(props) {
         setNumberOfPages(props.numberOfPages?props.numberOfPages:10);
         window.scroll(0, 0);
     }
+    useEffect(() => {
+        setNumberOfPages(props.numberOfPages?props.numberOfPages:10);
+    }, [props.numberOfPages])
+    
+    
     return (
         <div className="pagination">
             <ThemeProvider theme={darkTheme}>
