@@ -5,10 +5,10 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import './ContentModal.css';
 import axios from 'axios';
-import { img_300, img_500, unavailable, unavailableLandscape } from '../../Config/config';
+import {  img_500, unavailable } from '../../Config/config';
 
 const style = {
     position: 'absolute',
@@ -35,11 +35,12 @@ export default function ContentModal({ children, media_type, id }) {
     const getData = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
         setContent(data);
+        // console.log("data",data);
     }
 
     const getVideo = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
-        console.log(data);
+        // console.log(data);
         setVideo(data.results[0]?.key);
 
     }
@@ -47,6 +48,7 @@ export default function ContentModal({ children, media_type, id }) {
     useEffect(() => {
         getData();
         getVideo();
+        //eslint-disable-next-line
     }, []);
 
     return (

@@ -49,7 +49,7 @@ function Movie() {
                         poster={data.poster_path}
                         title={data.title || data.name}
                         date={data.first_air_date || data.release_date}
-                        media_type="Movie"
+                        media_type="movie"
                         vote_average={data.vote_average}
                     />
                 })}
