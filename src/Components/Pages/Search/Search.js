@@ -18,16 +18,60 @@ function Search() {
     const [content, setContent] = useState([])
     const [numberOfPages, setNumberOfPages] = useState();
 
-    const updateSearchText = (e) => {
-        setSearchText(e.target.value);
+    
+    
+    const updateText=(value)=>{
+        // let timeOutTimer;
+        // clearTimeout(timeOutTimer);
+        // timeOutTimer=setTimeout(()=>{
+        //     setSearchText(e.target.value);
+        // },3000);
+        setSearchText(value);
     }
 
-    const getSearch = async () => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchtext}&page=${page}&include_adult=false`);
+   
+   
 
-        setContent(data.results);
-        setNumberOfPages(data.total_pages > 500 ? 500 : data.total_pages);
+
+    const doaction=function(action,time){
+        let timer;
+        return function(){
+            let context=this;
+            // let argument=args;
+            clearTimeout(timer);
+            timer=setTimeout(()=>{
+                action.apply(context);
+            },time);
+        }
+    }
+  
+ 
+
+
+    const getSearch = async () => {
+        let response;
+        console.log("aa");
+        try{
+            response = await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchtext}&page=${page}&include_adult=false`);
+            const {data}=response;
+            setContent(data.results);
+            setNumberOfPages(data.total_pages > 500 ? 500 : data.total_pages);
+        }
+        catch (error){
+           
+                console.log("Error",error);
+            
+        }
         // setNumberOfPages(data.total_pages);
+    }
+
+    const onPress= doaction(getSearch,2000);
+
+
+    const updateSearchText = (e) => {
+
+        updateText(e.target.value);
+        onPress();
     }
 
     useEffect(() => {
