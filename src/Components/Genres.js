@@ -38,7 +38,7 @@ function Genres(props) {
     
   return (
     <div style={{padding:"6px 0px"}}>
-        {   selectedGenres && selectedGenres.map((selected)=>{
+        {   selectedGenres && Array.from(selectedGenres).map((selected)=>{
                 return <Chip 
                         label={selected.name}
                         style={{margin:2,backgroundColor:"blue",color:"white"}} 
@@ -50,7 +50,7 @@ function Genres(props) {
         })
         }
         {
-            genres && genres.map((genre)=>{
+            genres && Array.from(genres).map((genre)=>{
                 return <Chip
                            label={genre.name}
                            style={{margin:2,backgroundColor:"white",color:"black"}} 

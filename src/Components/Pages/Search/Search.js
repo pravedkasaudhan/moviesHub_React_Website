@@ -29,24 +29,6 @@ function Search() {
         setSearchText(value);
     }
 
-   
-   
-
-
-    const doaction=function(action,time){
-        let timer;
-        return function(){
-            let context=this;
-            // let argument=args;
-            clearTimeout(timer);
-            timer=setTimeout(()=>{
-                action.apply(context);
-            },time);
-        }
-    }
-  
- 
-
 
     const getSearch = async () => {
         let response;
@@ -65,13 +47,26 @@ function Search() {
         // setNumberOfPages(data.total_pages);
     }
 
+    const doaction=function(action,time){
+        let timer;
+        return function(){
+            let context=this;
+            // let argument=args;
+            clearTimeout(timer);
+            timer=setTimeout(()=>{
+                getSearch.apply(context);
+            },time);
+        }
+    }
+
     const onPress= doaction(getSearch,2000);
 
 
     const updateSearchText = (e) => {
 
         updateText(e.target.value);
-        onPress();
+        // onPress();
+
     }
 
     useEffect(() => {
@@ -95,6 +90,7 @@ function Search() {
                         variant="filled"
                         value={searchtext}
                         onChange={updateSearchText}
+                        onkeyup={onPress()}
                     >
                     </TextField>
                     <button style={{height:"72px"}} onClick={getSearch}>🔍</button>
