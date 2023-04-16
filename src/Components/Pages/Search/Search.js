@@ -18,18 +18,6 @@ function Search() {
     const [content, setContent] = useState([])
     const [numberOfPages, setNumberOfPages] = useState();
 
-    
-    
-    const updateText=(value)=>{
-        // let timeOutTimer;
-        // clearTimeout(timeOutTimer);
-        // timeOutTimer=setTimeout(()=>{
-        //     setSearchText(e.target.value);
-        // },3000);
-        setSearchText(value);
-    }
-
-
     const getSearch = async () => {
         let response;
         console.log("aa");
@@ -40,40 +28,44 @@ function Search() {
             setNumberOfPages(data.total_pages > 500 ? 500 : data.total_pages);
         }
         catch (error){
-           
+            
                 console.log("Error",error);
             
         }
         // setNumberOfPages(data.total_pages);
     }
 
-    const doaction=function(action,time){
-        let timer;
-        return function(){
-            let context=this;
-            // let argument=args;
-            clearTimeout(timer);
-            timer=setTimeout(()=>{
-                getSearch.apply(context);
-            },time);
-        }
-    }
+    // const doaction=function(action,time){
+    //     let timer;
+    //     return function(){
+    //         let context=this;
+    //         // let argument=args;
+    //         clearTimeout(timer);
+    //         timer=setTimeout(()=>{
+    //             getSearch.apply(context);
+    //         },time);
+    //     }
+    // }
 
-    const onPress= doaction(getSearch,2000);
+    // const onPress= doaction(getSearch,2000);
 
 
     const updateSearchText = (e) => {
 
-        updateText(e.target.value);
+        setSearchText(e.target.value);
         // onPress();
 
     }
 
     useEffect(() => {
         window.scroll(0, 0);
-        getSearch();
+        const timer=setTimeout(()=>{
+            getSearch();
+        },500);
+
+        return ()=>clearTimeout(timer);
         // eslint-disable-next-line 
-    }, [type, page]);
+    }, [type, page,searchtext]);
 
     return (
         <>
@@ -90,7 +82,7 @@ function Search() {
                         variant="filled"
                         value={searchtext}
                         onChange={updateSearchText}
-                        onkeyup={onPress()}
+                        // onkeyup={onPress()}
                     >
                     </TextField>
                     <button style={{height:"72px"}} onClick={getSearch}>🔍</button>
